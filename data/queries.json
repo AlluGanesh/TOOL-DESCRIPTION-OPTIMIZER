@@ -1,0 +1,402 @@
+[
+  {
+    "id": "Q001",
+    "query": "What are the latest developments in nuclear fusion energy reported this week?",
+    "correct_tool": "search_web",
+    "split": "tuning",
+    "difficulty": "easy",
+    "notes": "Requires live, up-to-date public information from the internet."
+  },
+  {
+    "id": "Q002",
+    "query": "Who won the men's singles title at Wimbledon this year and what was the final score?",
+    "correct_tool": "search_web",
+    "split": "tuning",
+    "difficulty": "medium",
+    "notes": "Factual current event query; distinct from internal documentation or local files."
+  },
+  {
+    "id": "Q003",
+    "query": "Compare the current market capitalization of Nvidia with Microsoft as of today.",
+    "correct_tool": "search_web",
+    "split": "tuning",
+    "difficulty": "hard",
+    "notes": "Financial comparison requiring real-time external market data. Near-miss with calculator if the model focuses only on comparison rather than live data retrieval."
+  },
+  {
+    "id": "Q004",
+    "query": "What is the current status of the Artemis space mission schedule according to recent announcements?",
+    "correct_tool": "search_web",
+    "split": "held-out",
+    "difficulty": "hard",
+    "notes": "Public web search for ongoing space mission updates; near-miss with search_docs if mistaken for internal team project schedule."
+  },
+  {
+    "id": "Q005",
+    "query": "What is our company's standard policy on parental leave according to HR documentation?",
+    "correct_tool": "search_docs",
+    "split": "tuning",
+    "difficulty": "easy",
+    "notes": "Direct query for internal HR policies within corporate knowledge base."
+  },
+  {
+    "id": "Q006",
+    "query": "Where can I find our engineering team's guidelines for submitting pull requests and code reviews?",
+    "correct_tool": "search_docs",
+    "split": "tuning",
+    "difficulty": "medium",
+    "notes": "Internal documentation search for engineering onboarding processes. Near-miss with search_web."
+  },
+  {
+    "id": "Q007",
+    "query": "What are the travel reimbursement limits for domestic client dinners specified in our expense guidelines?",
+    "correct_tool": "search_docs",
+    "split": "tuning",
+    "difficulty": "hard",
+    "notes": "Company internal policy search without an explicit file path. Near-miss with read_file."
+  },
+  {
+    "id": "Q008",
+    "query": "Look through our internal wiki for the recommended procedure when handling customer data deletion requests.",
+    "correct_tool": "search_docs",
+    "split": "held-out",
+    "difficulty": "medium",
+    "notes": "Corporate policy and compliance documentation search across internal wiki."
+  },
+  {
+    "id": "Q009",
+    "query": "What SLA tier do we commit to enterprise clients for urgent production outages in our support agreements?",
+    "correct_tool": "search_docs",
+    "split": "held-out",
+    "difficulty": "hard",
+    "notes": "Internal contractual documentation search. Near-miss with search_web if model confuses enterprise SLA with generic industry definitions."
+  },
+  {
+    "id": "Q010",
+    "query": "Display the contents of C:\\Users\\Dev\\workspace\\config.yaml so I can check the port settings.",
+    "correct_tool": "read_file",
+    "split": "tuning",
+    "difficulty": "easy",
+    "notes": "Explicit local absolute file path provided to inspect configuration."
+  },
+  {
+    "id": "Q011",
+    "query": "Can you inspect /var/log/nginx/error.log and show me the last few lines?",
+    "correct_tool": "read_file",
+    "split": "tuning",
+    "difficulty": "medium",
+    "notes": "Explicit system log path given. Near-miss with search_docs if model misinterprets log inspection as document searching."
+  },
+  {
+    "id": "Q012",
+    "query": "Could you pull up our budget spreadsheet at D:\\Finance\\2026_Q3_Projections.csv to check the total revenue row?",
+    "correct_tool": "read_file",
+    "split": "tuning",
+    "difficulty": "hard",
+    "notes": "Specific file path supplied for spreadsheet inspection. Near-miss with calculator if model attends to the financial calculations requested."
+  },
+  {
+    "id": "Q013",
+    "query": "Open ./notes/meeting_2026_10_20.txt and let me know what was discussed.",
+    "correct_tool": "read_file",
+    "split": "tuning",
+    "difficulty": "medium",
+    "notes": "Relative file path targeting local text document. Near-miss with search_docs."
+  },
+  {
+    "id": "Q014",
+    "query": "Check the contents of /etc/hosts to see if the local database alias is configured.",
+    "correct_tool": "read_file",
+    "split": "held-out",
+    "difficulty": "hard",
+    "notes": "Direct path to system file. Near-miss with search_docs or search_web."
+  },
+  {
+    "id": "Q015",
+    "query": "Save this text 'DEBUG_LEVEL=verbose' into C:\\App\\settings.env on my computer.",
+    "correct_tool": "write_file",
+    "split": "tuning",
+    "difficulty": "easy",
+    "notes": "Explicit destination path and text content specified for local persistence."
+  },
+  {
+    "id": "Q016",
+    "query": "Store the generated summary from our brainstorm session into /home/user/docs/summary.md.",
+    "correct_tool": "write_file",
+    "split": "tuning",
+    "difficulty": "medium",
+    "notes": "Local file writing with path and generated payload. Near-miss with send_email if mistaken for distribution."
+  },
+  {
+    "id": "Q017",
+    "query": "Create a new text file at D:\\Projects\\backup_log.txt containing the timestamp '2026-10-24 17:00:00'.",
+    "correct_tool": "write_file",
+    "split": "tuning",
+    "difficulty": "hard",
+    "notes": "Explicit write operation. Near-miss with read_file or set_reminder due to the timestamp."
+  },
+  {
+    "id": "Q018",
+    "query": "Export this list of customer IDs to C:\\Exports\\churned_users.csv on the disk.",
+    "correct_tool": "write_file",
+    "split": "held-out",
+    "difficulty": "medium",
+    "notes": "File writing operation targeting a specific CSV path."
+  },
+  {
+    "id": "Q019",
+    "query": "Send an email to sarah@example.com with the subject 'Quarterly Budget' and let her know the numbers are finalized.",
+    "correct_tool": "send_email",
+    "split": "tuning",
+    "difficulty": "easy",
+    "notes": "Direct message dispatch with recipient address, subject, and body."
+  },
+  {
+    "id": "Q020",
+    "query": "Draft and dispatch a quick note to team-leads@internal.org letting everyone know that Friday's offsite starts at 9 AM.",
+    "correct_tool": "send_email",
+    "split": "tuning",
+    "difficulty": "medium",
+    "notes": "Email dispatch to mailing list. Near-miss with create_calendar_event because an offsite event time is discussed."
+  },
+  {
+    "id": "Q021",
+    "query": "Reach out to david.miller@partnercorp.com to inform him that our meeting scheduled for Tuesday needs to be rescheduled.",
+    "correct_tool": "send_email",
+    "split": "tuning",
+    "difficulty": "hard",
+    "notes": "Sending communication about a meeting rather than booking the calendar slot directly. Near-miss with create_calendar_event."
+  },
+  {
+    "id": "Q022",
+    "query": "Forward a note to support@cloudvendor.io with subject 'Urgent: Billing Discrepancy' explaining our last invoice has duplicate line items.",
+    "correct_tool": "send_email",
+    "split": "held-out",
+    "difficulty": "medium",
+    "notes": "Formal customer support email dispatch."
+  },
+  {
+    "id": "Q023",
+    "query": "Notify alex@startup.ai that the server credentials were rotated and attach the instructions in the message.",
+    "correct_tool": "send_email",
+    "split": "held-out",
+    "difficulty": "hard",
+    "notes": "Direct messaging notification to recipient. Near-miss with write_file if focus shifts to credential instructions."
+  },
+  {
+    "id": "Q024",
+    "query": "Schedule a team sync on Monday from 10:00 AM to 11:00 AM titled 'Sprint Planning'.",
+    "correct_tool": "create_calendar_event",
+    "split": "tuning",
+    "difficulty": "easy",
+    "notes": "Explicit calendar event with title, start, and end time."
+  },
+  {
+    "id": "Q025",
+    "query": "Put a 30-minute one-on-one session with Michael on my schedule tomorrow starting at 3:30 PM.",
+    "correct_tool": "create_calendar_event",
+    "split": "tuning",
+    "difficulty": "medium",
+    "notes": "Calendar booking with duration and start timestamp. Near-miss with set_reminder."
+  },
+  {
+    "id": "Q026",
+    "query": "Book a slot for the Product Strategy Review from 2 PM to 4 PM next Wednesday in the boardroom.",
+    "correct_tool": "create_calendar_event",
+    "split": "tuning",
+    "difficulty": "hard",
+    "notes": "Two-hour meeting reservation on the calendar. Near-miss with set_reminder if duration is ignored."
+  },
+  {
+    "id": "Q027",
+    "query": "Block off 9:00 AM to 12:00 PM on October 30th on my calendar for deep work and report preparation.",
+    "correct_tool": "create_calendar_event",
+    "split": "tuning",
+    "difficulty": "hard",
+    "notes": "Calendar block reservation. Near-miss with set_reminder."
+  },
+  {
+    "id": "Q028",
+    "query": "Reserve a meeting on Thursday from 4:00 PM to 5:00 PM with the marketing team called 'Campaign Debrief'.",
+    "correct_tool": "create_calendar_event",
+    "split": "held-out",
+    "difficulty": "medium",
+    "notes": "Standard group meeting schedule entry."
+  },
+  {
+    "id": "Q029",
+    "query": "Remind me at 4:30 PM today to take my medication.",
+    "correct_tool": "set_reminder",
+    "split": "tuning",
+    "difficulty": "easy",
+    "notes": "Explicit reminder command with notification time and action."
+  },
+  {
+    "id": "Q030",
+    "query": "Ping me in 2 hours so I don't forget to take the laundry out of the dryer.",
+    "correct_tool": "set_reminder",
+    "split": "tuning",
+    "difficulty": "medium",
+    "notes": "Relative time reminder. Near-miss with create_calendar_event."
+  },
+  {
+    "id": "Q031",
+    "query": "Set an alert for tomorrow morning at 8:00 AM telling me to review the candidate resumes before interviews begin.",
+    "correct_tool": "set_reminder",
+    "split": "tuning",
+    "difficulty": "hard",
+    "notes": "Personal alert/nudge before work events. Near-miss with create_calendar_event because interviews are mentioned."
+  },
+  {
+    "id": "Q032",
+    "query": "Make sure I get a notification at 6:00 PM to submit my weekly timesheet.",
+    "correct_tool": "set_reminder",
+    "split": "held-out",
+    "difficulty": "hard",
+    "notes": "Personal notification alert. Near-miss with create_calendar_event."
+  },
+  {
+    "id": "Q033",
+    "query": "What is the current temperature and forecast for Seattle today?",
+    "correct_tool": "get_weather",
+    "split": "tuning",
+    "difficulty": "easy",
+    "notes": "Direct city meteorological query."
+  },
+  {
+    "id": "Q034",
+    "query": "Is it going to rain in London later this evening?",
+    "correct_tool": "get_weather",
+    "split": "tuning",
+    "difficulty": "medium",
+    "notes": "Precipitation forecast inquiry for a specific city."
+  },
+  {
+    "id": "Q035",
+    "query": "Do I need to carry an umbrella or a heavy coat if I'm heading out in Tokyo tonight?",
+    "correct_tool": "get_weather",
+    "split": "tuning",
+    "difficulty": "hard",
+    "notes": "Conversational question asking for clothing advice based on city atmospheric conditions. Near-miss with search_web or none."
+  },
+  {
+    "id": "Q036",
+    "query": "How warm is it currently in Miami Beach in Celsius?",
+    "correct_tool": "get_weather",
+    "split": "held-out",
+    "difficulty": "medium",
+    "notes": "Specific temperature inquiry for a geographic location."
+  },
+  {
+    "id": "Q037",
+    "query": "What is the square root of 144 plus 58 multiplied by 3?",
+    "correct_tool": "calculator",
+    "split": "tuning",
+    "difficulty": "easy",
+    "notes": "Direct arithmetic computation."
+  },
+  {
+    "id": "Q038",
+    "query": "If a store offers a 35% discount on a jacket priced at $240, how much do I actually pay before sales tax?",
+    "correct_tool": "calculator",
+    "split": "tuning",
+    "difficulty": "medium",
+    "notes": "Real-world percentage calculation problem."
+  },
+  {
+    "id": "Q039",
+    "query": "Compute the compound interest on a principal of 15,000 at an annual interest rate of 6.5% compounded monthly over 4 years.",
+    "correct_tool": "calculator",
+    "split": "tuning",
+    "difficulty": "hard",
+    "notes": "Complex financial formula calculation. Near-miss with search_web if model searches for formula rather than evaluating expression."
+  },
+  {
+    "id": "Q040",
+    "query": "Divide 8,742 by 14 and give me the exact result.",
+    "correct_tool": "calculator",
+    "split": "held-out",
+    "difficulty": "easy",
+    "notes": "Direct numeric division."
+  },
+  {
+    "id": "Q041",
+    "query": "What is the monthly mortgage payment on a $450,000 loan with a 30-year fixed rate of 7.2%?",
+    "correct_tool": "calculator",
+    "split": "held-out",
+    "difficulty": "hard",
+    "notes": "Formulaic computational calculation. Near-miss with search_web."
+  },
+  {
+    "id": "Q042",
+    "query": "Convert 'Thank you very much for your kind hospitality' into French.",
+    "correct_tool": "translate_text",
+    "split": "tuning",
+    "difficulty": "easy",
+    "notes": "Direct phrase language conversion."
+  },
+  {
+    "id": "Q043",
+    "query": "How would you express 'The system was restarted to apply critical security patches' in German?",
+    "correct_tool": "translate_text",
+    "split": "tuning",
+    "difficulty": "medium",
+    "notes": "Technical sentence translation into German. Near-miss with none if model treats it as a general question."
+  },
+  {
+    "id": "Q044",
+    "query": "Render this welcome greeting 'Welcome to our international conference on artificial intelligence' into Japanese.",
+    "correct_tool": "translate_text",
+    "split": "tuning",
+    "difficulty": "hard",
+    "notes": "Formal greeting translation into Japanese."
+  },
+  {
+    "id": "Q045",
+    "query": "Please express 'Where is the nearest subway station?' in Spanish.",
+    "correct_tool": "translate_text",
+    "split": "held-out",
+    "difficulty": "medium",
+    "notes": "Conversational travel question translation."
+  },
+  {
+    "id": "Q046",
+    "query": "Can you explain the philosophical difference between utilitarianism and deontological ethics?",
+    "correct_tool": "none",
+    "split": "tuning",
+    "difficulty": "easy",
+    "notes": "Conceptual philosophical inquiry requiring internal reasoning; no tools apply."
+  },
+  {
+    "id": "Q047",
+    "query": "Write a short three-stanza poem celebrating the arrival of spring.",
+    "correct_tool": "none",
+    "split": "tuning",
+    "difficulty": "medium",
+    "notes": "Creative generative writing; no search, file, or communication tools are appropriate."
+  },
+  {
+    "id": "Q048",
+    "query": "Why is zero classified mathematically as an even number rather than an odd number?",
+    "correct_tool": "none",
+    "split": "tuning",
+    "difficulty": "hard",
+    "notes": "Theoretical explanation of mathematical definitions. Near-miss with calculator if the model mistakenly triggers computational tools for math theory."
+  },
+  {
+    "id": "Q049",
+    "query": "What are some general tips for maintaining good posture while working long hours at a desk?",
+    "correct_tool": "none",
+    "split": "held-out",
+    "difficulty": "medium",
+    "notes": "General health advice/best practice discussion requiring no external search or tools. Near-miss with search_web."
+  },
+  {
+    "id": "Q050",
+    "query": "Could you brainstorm five creative names for a sustainable bamboo home goods brand?",
+    "correct_tool": "none",
+    "split": "held-out",
+    "difficulty": "hard",
+    "notes": "Creative branding ideation; no external retrieval or utility tools required."
+  }
+]

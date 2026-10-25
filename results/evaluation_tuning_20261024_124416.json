@@ -1,0 +1,1259 @@
+{
+  "metadata": {
+    "run_id": "eval_tuning_20261024_124416",
+    "model": "qwen2.5:3b",
+    "split": "tuning",
+    "runs_per_query": 1,
+    "timestamp": "2026-10-24T12:45:40.440684+00:00",
+    "total_queries": 35,
+    "tool_definition_hash": "6a989b336d703f0eda7d36aa01d7d1458b7b72aac47dca220b4924b48358b495",
+    "dataset_hash": "10328b74aba349b092ae97bf0896b1d12fffa135a45bfd211f82f1a5e30ca13c"
+  },
+  "total_queries": 35,
+  "correct_count": 28,
+  "accuracy": 0.8,
+  "per_tool_metrics": {
+    "search_web": {
+      "tool": "search_web",
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 3,
+      "total_predicted": 3
+    },
+    "search_docs": {
+      "tool": "search_docs",
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1_score": 0.5,
+      "total_actual": 3,
+      "total_predicted": 1
+    },
+    "read_file": {
+      "tool": "read_file",
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1_score": 0.4,
+      "total_actual": 4,
+      "total_predicted": 1
+    },
+    "write_file": {
+      "tool": "write_file",
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 3,
+      "total_predicted": 3
+    },
+    "send_email": {
+      "tool": "send_email",
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 3,
+      "total_predicted": 3
+    },
+    "create_calendar_event": {
+      "tool": "create_calendar_event",
+      "true_positives": 4,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1_score": 0.8889,
+      "total_actual": 4,
+      "total_predicted": 5
+    },
+    "set_reminder": {
+      "tool": "set_reminder",
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 3,
+      "total_predicted": 3
+    },
+    "get_weather": {
+      "tool": "get_weather",
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 3,
+      "total_predicted": 3
+    },
+    "calculator": {
+      "tool": "calculator",
+      "true_positives": 3,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1_score": 0.8571,
+      "total_actual": 3,
+      "total_predicted": 4
+    },
+    "translate_text": {
+      "tool": "translate_text",
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 3,
+      "total_predicted": 3
+    },
+    "none": {
+      "tool": "none",
+      "true_positives": 1,
+      "false_positives": 5,
+      "false_negatives": 2,
+      "precision": 0.1667,
+      "recall": 0.3333,
+      "f1_score": 0.2222,
+      "total_actual": 3,
+      "total_predicted": 6
+    }
+  },
+  "confusion_matrix": {
+    "search_web": {
+      "search_web": 3,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 0
+    },
+    "search_docs": {
+      "search_web": 0,
+      "search_docs": 1,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 2
+    },
+    "read_file": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 1,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 3
+    },
+    "write_file": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 3,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 0
+    },
+    "send_email": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 3,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 0
+    },
+    "create_calendar_event": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 4,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 0
+    },
+    "set_reminder": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 3,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 0
+    },
+    "get_weather": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 3,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 0
+    },
+    "calculator": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 3,
+      "translate_text": 0,
+      "none": 0
+    },
+    "translate_text": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 3,
+      "none": 0
+    },
+    "none": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 1,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 1,
+      "translate_text": 0,
+      "none": 1
+    }
+  },
+  "mistakes": [
+    {
+      "query_id": "Q006",
+      "query": "Where can I find our engineering team's guidelines for submitting pull requests and code reviews?",
+      "expected_tool": "search_docs",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Internal documentation search for engineering onboarding processes. Near-miss with search_web."
+    },
+    {
+      "query_id": "Q007",
+      "query": "What are the travel reimbursement limits for domestic client dinners specified in our expense guidelines?",
+      "expected_tool": "search_docs",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Company internal policy search without an explicit file path. Near-miss with read_file."
+    },
+    {
+      "query_id": "Q010",
+      "query": "Display the contents of C:\\Users\\Dev\\workspace\\config.yaml so I can check the port settings.",
+      "expected_tool": "read_file",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Explicit local absolute file path provided to inspect configuration."
+    },
+    {
+      "query_id": "Q011",
+      "query": "Can you inspect /var/log/nginx/error.log and show me the last few lines?",
+      "expected_tool": "read_file",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Explicit system log path given. Near-miss with search_docs if model misinterprets log inspection as document searching."
+    },
+    {
+      "query_id": "Q013",
+      "query": "Open ./notes/meeting_2026_10_20.txt and let me know what was discussed.",
+      "expected_tool": "read_file",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Relative file path targeting local text document. Near-miss with search_docs."
+    },
+    {
+      "query_id": "Q047",
+      "query": "Write a short three-stanza poem celebrating the arrival of spring.",
+      "expected_tool": "none",
+      "predicted_tool": "create_calendar_event",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "create_calendar_event"
+      ],
+      "notes": "Creative generative writing; no search, file, or communication tools are appropriate."
+    },
+    {
+      "query_id": "Q048",
+      "query": "Why is zero classified mathematically as an even number rather than an odd number?",
+      "expected_tool": "none",
+      "predicted_tool": "calculator",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "calculator"
+      ],
+      "notes": "Theoretical explanation of mathematical definitions. Near-miss with calculator if the model mistakenly triggers computational tools for math theory."
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "Q001",
+      "query": "What are the latest developments in nuclear fusion energy reported this week?",
+      "expected_tool": "search_web",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "search_web"
+      ],
+      "final_prediction": "search_web",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "search_web",
+          "tool_called": true,
+          "arguments": {
+            "query": "latest developments nuclear fusion energy this week"
+          },
+          "duration_ms": 17085.32,
+          "cache_hit": true,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q002",
+      "query": "Who won the men's singles title at Wimbledon this year and what was the final score?",
+      "expected_tool": "search_web",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "search_web"
+      ],
+      "final_prediction": "search_web",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "search_web",
+          "tool_called": true,
+          "arguments": {
+            "query": "Wimbledon men's singles winner this year"
+          },
+          "duration_ms": 4382.79,
+          "cache_hit": true,
+          "raw_response": "To provide you with the information about who won the men's singles title at Wimbledon this year and the final score, I would need to search the web for the latest results. Let's use the search_web function to find this information.\n"
+        }
+      ]
+    },
+    {
+      "query_id": "Q003",
+      "query": "Compare the current market capitalization of Nvidia with Microsoft as of today.",
+      "expected_tool": "search_web",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "search_web"
+      ],
+      "final_prediction": "search_web",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "search_web",
+          "tool_called": true,
+          "arguments": {
+            "query": "current market capitalization Nvidia Microsoft"
+          },
+          "duration_ms": 1640.78,
+          "cache_hit": true,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q005",
+      "query": "What is our company's standard policy on parental leave according to HR documentation?",
+      "expected_tool": "search_docs",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "search_docs"
+      ],
+      "final_prediction": "search_docs",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "search_docs",
+          "tool_called": true,
+          "arguments": {
+            "query": "company parental leave policy HR"
+          },
+          "duration_ms": 1617.5,
+          "cache_hit": true,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q006",
+      "query": "Where can I find our engineering team's guidelines for submitting pull requests and code reviews?",
+      "expected_tool": "search_docs",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "final_prediction": "none",
+      "correct": false,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "none",
+          "tool_called": false,
+          "arguments": null,
+          "duration_ms": 3380.52,
+          "cache_hit": true,
+          "raw_response": "I don't have direct access to internal documents or specific files without additional context. However, you can try searching for these guidelines using the search_docs tool. Could you please provide me with a query to search for the engineering team's guidelines for submitting pull requests and code reviews?"
+        }
+      ]
+    },
+    {
+      "query_id": "Q007",
+      "query": "What are the travel reimbursement limits for domestic client dinners specified in our expense guidelines?",
+      "expected_tool": "search_docs",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "none"
+      ],
+      "final_prediction": "none",
+      "correct": false,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "none",
+          "tool_called": false,
+          "arguments": null,
+          "duration_ms": 5438.98,
+          "cache_hit": true,
+          "raw_response": "I don't have direct access to your company's expense guidelines or specific policies regarding travel reimbursement limits for domestic client dinners. However, I can help you find this information by searching the internet. Could you please provide me with a specific company name or any other relevant details that might help narrow down the search?\n\nIf you have a document or URL where these guidelines are stored, I can also look into that. Please let me know how you would like to proceed."
+        }
+      ]
+    },
+    {
+      "query_id": "Q010",
+      "query": "Display the contents of C:\\Users\\Dev\\workspace\\config.yaml so I can check the port settings.",
+      "expected_tool": "read_file",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "none"
+      ],
+      "final_prediction": "none",
+      "correct": false,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "none",
+          "tool_called": false,
+          "arguments": null,
+          "duration_ms": 6592.18,
+          "cache_hit": true,
+          "raw_response": "I don't have direct access to files on your local machine as I am a cloud-based AI. However, you can use the `read_file` function to read the file. Please provide me with the path to the file, and I will proceed with that.\n\nCould you please specify the path to the `config.yaml` file? It should be something like `C:\\Users\\Dev\\workspace\\config.yaml`.\n"
+        }
+      ]
+    },
+    {
+      "query_id": "Q011",
+      "query": "Can you inspect /var/log/nginx/error.log and show me the last few lines?",
+      "expected_tool": "read_file",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "final_prediction": "none",
+      "correct": false,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "none",
+          "tool_called": false,
+          "arguments": null,
+          "duration_ms": 3234.92,
+          "cache_hit": true,
+          "raw_response": "Inspecting logs directly from an external location like `/var/log/nginx/error.log` is not supported by the current set of tools. However, I can help you with other tasks. Would you like to try a different task or do you need assistance with something else?"
+        }
+      ]
+    },
+    {
+      "query_id": "Q012",
+      "query": "Could you pull up our budget spreadsheet at D:\\Finance\\2026_Q3_Projections.csv to check the total revenue row?",
+      "expected_tool": "read_file",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "read_file"
+      ],
+      "final_prediction": "read_file",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "read_file",
+          "tool_called": true,
+          "arguments": {
+            "path": "D:\\Finance\\2026_Q3_Projections.csv"
+          },
+          "duration_ms": 2217.61,
+          "cache_hit": true,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q013",
+      "query": "Open ./notes/meeting_2026_10_20.txt and let me know what was discussed.",
+      "expected_tool": "read_file",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "final_prediction": "none",
+      "correct": false,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "none",
+          "tool_called": false,
+          "arguments": null,
+          "duration_ms": 2232.72,
+          "cache_hit": true,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q015",
+      "query": "Save this text 'DEBUG_LEVEL=verbose' into C:\\App\\settings.env on my computer.",
+      "expected_tool": "write_file",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "write_file"
+      ],
+      "final_prediction": "write_file",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "write_file",
+          "tool_called": true,
+          "arguments": {
+            "content": "DEBUG_LEVEL=verbose",
+            "path": "C:\\App\\settings.env"
+          },
+          "duration_ms": 2327.15,
+          "cache_hit": true,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q016",
+      "query": "Store the generated summary from our brainstorm session into /home/user/docs/summary.md.",
+      "expected_tool": "write_file",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "write_file"
+      ],
+      "final_prediction": "write_file",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "write_file",
+          "tool_called": true,
+          "arguments": {
+            "content": "### Placeholder Summary\nThis is a placeholder summary created for demonstration purposes.\n\nFeel free to replace this with your actual summary.",
+            "path": "/home/user/docs/summary.md"
+          },
+          "duration_ms": 10138.74,
+          "cache_hit": true,
+          "raw_response": "To accomplish this task, I will use the `write_file` function to write the summary into the specified file path. However, I need the actual summary content to proceed. Since you haven't provided the summary content, I'll create a placeholder summary for demonstration purposes.\n\nLet's create a placeholder summary and store it in the file.\n"
+        }
+      ]
+    },
+    {
+      "query_id": "Q017",
+      "query": "Create a new text file at D:\\Projects\\backup_log.txt containing the timestamp '2026-10-24 17:00:00'.",
+      "expected_tool": "write_file",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "write_file"
+      ],
+      "final_prediction": "write_file",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "write_file",
+          "tool_called": true,
+          "arguments": {
+            "path": "D:\\Projects\\backup_log.txt",
+            "content": "2026-10-24 17:00:00"
+          },
+          "duration_ms": 3528.43,
+          "cache_hit": true,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q019",
+      "query": "Send an email to sarah@example.com with the subject 'Quarterly Budget' and let her know the numbers are finalized.",
+      "expected_tool": "send_email",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "send_email"
+      ],
+      "final_prediction": "send_email",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "send_email",
+          "tool_called": true,
+          "arguments": {
+            "body": "The numbers for the quarter have been finalized.",
+            "to": "sarah@example.com",
+            "subject": "Quarterly Budget"
+          },
+          "duration_ms": 3132.31,
+          "cache_hit": true,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q020",
+      "query": "Draft and dispatch a quick note to team-leads@internal.org letting everyone know that Friday's offsite starts at 9 AM.",
+      "expected_tool": "send_email",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "send_email"
+      ],
+      "final_prediction": "send_email",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "send_email",
+          "tool_called": true,
+          "arguments": {
+            "to": "team-leads@internal.org",
+            "subject": "Friday's Offsite - Meeting Start Time",
+            "body": "Dear Team Leads, \n\nWe hope you're all doing well. Just a quick reminder that our offsite is scheduled to start at 9 AM on Friday. \n\nBest, \n[Your Name]"
+          },
+          "duration_ms": 5379.95,
+          "cache_hit": true,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q021",
+      "query": "Reach out to david.miller@partnercorp.com to inform him that our meeting scheduled for Tuesday needs to be rescheduled.",
+      "expected_tool": "send_email",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "send_email"
+      ],
+      "final_prediction": "send_email",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "send_email",
+          "tool_called": true,
+          "arguments": {
+            "to": "david.miller@partnercorp.com",
+            "subject": "Meeting Rescheduled",
+            "body": "Dear David, I hope this email finds you well. I am writing to inform you that our previously scheduled meeting on Tuesday has been rescheduled. Please let me know a new date that works for you. Thank you."
+          },
+          "duration_ms": 5192.42,
+          "cache_hit": true,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q024",
+      "query": "Schedule a team sync on Monday from 10:00 AM to 11:00 AM titled 'Sprint Planning'.",
+      "expected_tool": "create_calendar_event",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "create_calendar_event"
+      ],
+      "final_prediction": "create_calendar_event",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "create_calendar_event",
+          "tool_called": true,
+          "arguments": {
+            "start": "10:00 AM",
+            "end": "11:00 AM",
+            "title": "Sprint Planning"
+          },
+          "duration_ms": 3093.96,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q025",
+      "query": "Put a 30-minute one-on-one session with Michael on my schedule tomorrow starting at 3:30 PM.",
+      "expected_tool": "create_calendar_event",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "create_calendar_event"
+      ],
+      "final_prediction": "create_calendar_event",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "create_calendar_event",
+          "tool_called": true,
+          "arguments": {
+            "title": "30-minute one-on-one session with Michael",
+            "start": "15:30",
+            "end": "16:00"
+          },
+          "duration_ms": 3294.34,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q026",
+      "query": "Book a slot for the Product Strategy Review from 2 PM to 4 PM next Wednesday in the boardroom.",
+      "expected_tool": "create_calendar_event",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "create_calendar_event"
+      ],
+      "final_prediction": "create_calendar_event",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "create_calendar_event",
+          "tool_called": true,
+          "arguments": {
+            "start": "14:00",
+            "end": "16:00",
+            "title": "Product Strategy Review"
+          },
+          "duration_ms": 2841.35,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q027",
+      "query": "Block off 9:00 AM to 12:00 PM on October 30th on my calendar for deep work and report preparation.",
+      "expected_tool": "create_calendar_event",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "create_calendar_event"
+      ],
+      "final_prediction": "create_calendar_event",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "create_calendar_event",
+          "tool_called": true,
+          "arguments": {
+            "start": "09:00",
+            "end": "12:00",
+            "title": "Deep Work and Report Preparation"
+          },
+          "duration_ms": 3122.47,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q029",
+      "query": "Remind me at 4:30 PM today to take my medication.",
+      "expected_tool": "set_reminder",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "set_reminder"
+      ],
+      "final_prediction": "set_reminder",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "set_reminder",
+          "tool_called": true,
+          "arguments": {
+            "text": "Take my medication",
+            "time": "16:30"
+          },
+          "duration_ms": 2237.96,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q030",
+      "query": "Ping me in 2 hours so I don't forget to take the laundry out of the dryer.",
+      "expected_tool": "set_reminder",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "set_reminder"
+      ],
+      "final_prediction": "set_reminder",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "set_reminder",
+          "tool_called": true,
+          "arguments": {
+            "text": "Don't forget to take the laundry out of the dryer.",
+            "time": "2 hours"
+          },
+          "duration_ms": 2662.93,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q031",
+      "query": "Set an alert for tomorrow morning at 8:00 AM telling me to review the candidate resumes before interviews begin.",
+      "expected_tool": "set_reminder",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "set_reminder"
+      ],
+      "final_prediction": "set_reminder",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "set_reminder",
+          "tool_called": true,
+          "arguments": {
+            "text": "Review the candidate resumes before interviews begin.",
+            "time": "08:00 AM tomorrow"
+          },
+          "duration_ms": 2684.59,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q033",
+      "query": "What is the current temperature and forecast for Seattle today?",
+      "expected_tool": "get_weather",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "get_weather"
+      ],
+      "final_prediction": "get_weather",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "get_weather",
+          "tool_called": true,
+          "arguments": {
+            "city": "Seattle"
+          },
+          "duration_ms": 1382.8,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q034",
+      "query": "Is it going to rain in London later this evening?",
+      "expected_tool": "get_weather",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "get_weather"
+      ],
+      "final_prediction": "get_weather",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "get_weather",
+          "tool_called": true,
+          "arguments": {
+            "city": "London"
+          },
+          "duration_ms": 1425.98,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q035",
+      "query": "Do I need to carry an umbrella or a heavy coat if I'm heading out in Tokyo tonight?",
+      "expected_tool": "get_weather",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "get_weather"
+      ],
+      "final_prediction": "get_weather",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "get_weather",
+          "tool_called": true,
+          "arguments": {
+            "city": "Tokyo"
+          },
+          "duration_ms": 3395.63,
+          "cache_hit": false,
+          "raw_response": "To determine if you need to carry an umbrella or a heavy coat in Tokyo tonight, I would need to check the current weather conditions for Tokyo. Let's fetch that information.\n"
+        }
+      ]
+    },
+    {
+      "query_id": "Q037",
+      "query": "What is the square root of 144 plus 58 multiplied by 3?",
+      "expected_tool": "calculator",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "calculator"
+      ],
+      "final_prediction": "calculator",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "calculator",
+          "tool_called": true,
+          "arguments": {
+            "expression": "sqrt(144) + (58 * 3)"
+          },
+          "duration_ms": 2089.81,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q038",
+      "query": "If a store offers a 35% discount on a jacket priced at $240, how much do I actually pay before sales tax?",
+      "expected_tool": "calculator",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "calculator"
+      ],
+      "final_prediction": "calculator",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "calculator",
+          "tool_called": true,
+          "arguments": {
+            "expression": "240 * 0.35"
+          },
+          "duration_ms": 12828.68,
+          "cache_hit": false,
+          "raw_response": "To calculate the amount you pay before sales tax after a 35% discount on a jacket priced at $240, we first need to determine the discount amount and then subtract it from the original price.\n\nLet's calculate it step by step:\n1. Calculate the discount amount: \\( \\text{Discount Amount} = \\text{Original Price} \\times \\text{Discount Percentage} \\)\n2. Subtract the discount amount from the original price to get the final price before sales tax.\n\nLet's proceed with the calculation.\n"
+        }
+      ]
+    },
+    {
+      "query_id": "Q039",
+      "query": "Compute the compound interest on a principal of 15,000 at an annual interest rate of 6.5% compounded monthly over 4 years.",
+      "expected_tool": "calculator",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "calculator"
+      ],
+      "final_prediction": "calculator",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "calculator",
+          "tool_called": true,
+          "arguments": {
+            "expression": "15000 * (1 + 0.065/12)^(12*4)"
+          },
+          "duration_ms": 2940.41,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q042",
+      "query": "Convert 'Thank you very much for your kind hospitality' into French.",
+      "expected_tool": "translate_text",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "translate_text"
+      ],
+      "final_prediction": "translate_text",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "translate_text",
+          "tool_called": true,
+          "arguments": {
+            "text": "Thank you very much for your kind hospitality",
+            "target_language": "fr"
+          },
+          "duration_ms": 2128.87,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q043",
+      "query": "How would you express 'The system was restarted to apply critical security patches' in German?",
+      "expected_tool": "translate_text",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "translate_text"
+      ],
+      "final_prediction": "translate_text",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "translate_text",
+          "tool_called": true,
+          "arguments": {
+            "text": "The system was restarted to apply critical security patches",
+            "target_language": "de"
+          },
+          "duration_ms": 2331.22,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q044",
+      "query": "Render this welcome greeting 'Welcome to our international conference on artificial intelligence' into Japanese.",
+      "expected_tool": "translate_text",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "translate_text"
+      ],
+      "final_prediction": "translate_text",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "translate_text",
+          "tool_called": true,
+          "arguments": {
+            "text": "Welcome to our international conference on artificial intelligence",
+            "target_language": "ja"
+          },
+          "duration_ms": 2208.72,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q046",
+      "query": "Can you explain the philosophical difference between utilitarianism and deontological ethics?",
+      "expected_tool": "none",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "none"
+      ],
+      "final_prediction": "none",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "none",
+          "tool_called": false,
+          "arguments": null,
+          "duration_ms": 17730.21,
+          "cache_hit": false,
+          "raw_response": "Utilitarianism and deontological ethics are two major schools of thought in moral philosophy, each with distinct approaches to determining the rightness or wrongness of actions.\n\nUtilitarianism, also known as consequentialism, is based on the principle that the best action is the one that maximizes overall happiness or utility. This approach evaluates the morality of an action based on its outcomes or consequences. For example, in utilitarianism, an action is considered right if it leads to the greatest good for the greatest number of people.\n\nOn the other hand, deontological ethics, such as Kantian ethics, focuses on the inherent rightness or wrongness of actions themselves, regardless of their outcomes. This approach is based on the idea of duties and rules that are independent of the consequences of actions. For instance, Kant's categorical imperative states that one should act only according to that maxim whereby you can at the same time will that it should become a universal law. This means that one should act in ways that can be consistently applied to everyone without contradiction.\n\nWhile utilitarianism emphasizes the consequences of actions, deontological ethics emphasizes the importance of adhering to certain rules or duties. Utilitarianism can be seen as more flexible and adaptable to different situations, as it allows for the consideration of various outcomes. Deontological ethics, however, can sometimes be criticized for being inflexible, as it may require adherence to certain rules even if the outcomes are not optimal.\n\nWould you like to know more about these theories or explore how they apply to specific scenarios?"
+        }
+      ]
+    },
+    {
+      "query_id": "Q047",
+      "query": "Write a short three-stanza poem celebrating the arrival of spring.",
+      "expected_tool": "none",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "create_calendar_event"
+      ],
+      "final_prediction": "create_calendar_event",
+      "correct": false,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "create_calendar_event",
+          "tool_called": true,
+          "arguments": {
+            "title": "Spring Poetry Festival",
+            "start": "2023-04-01T18:00:00Z",
+            "end": "2023-04-01T20:00:00Z"
+          },
+          "duration_ms": 9445.1,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q048",
+      "query": "Why is zero classified mathematically as an even number rather than an odd number?",
+      "expected_tool": "none",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "calculator"
+      ],
+      "final_prediction": "calculator",
+      "correct": false,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "calculator",
+          "tool_called": true,
+          "arguments": {
+            "expression": "0 % 2"
+          },
+          "duration_ms": 4004.58,
+          "cache_hit": false,
+          "raw_response": "Zero is classified as an even number because it meets the definition of even numbers in mathematics. An even number is any integer that can be divided by 2 with no remainder. \n\nLet's verify this using a simple calculation:\n"
+        }
+      ]
+    }
+  ]
+}

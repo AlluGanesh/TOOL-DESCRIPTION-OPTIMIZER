@@ -1,0 +1,170 @@
+[
+  {
+    "name": "search_web",
+    "description": "Searches for information.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "The search query string."
+        }
+      },
+      "required": ["query"]
+    }
+  },
+  {
+    "name": "search_docs",
+    "description": "Looks up information in documents.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "The query to search internal documentation."
+        }
+      },
+      "required": ["query"]
+    }
+  },
+  {
+    "name": "read_file",
+    "description": "Reads a file.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "The path of the file to read."
+        }
+      },
+      "required": ["path"]
+    }
+  },
+  {
+    "name": "write_file",
+    "description": "Writes data to a file.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "The path of the file to write."
+        },
+        "content": {
+          "type": "string",
+          "description": "The content to write into the file."
+        }
+      },
+      "required": ["path", "content"]
+    }
+  },
+  {
+    "name": "send_email",
+    "description": "Sends a message.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "to": {
+          "type": "string",
+          "description": "Recipient email address."
+        },
+        "subject": {
+          "type": "string",
+          "description": "Subject of the email."
+        },
+        "body": {
+          "type": "string",
+          "description": "Body content of the email."
+        }
+      },
+      "required": ["to", "subject", "body"]
+    }
+  },
+  {
+    "name": "create_calendar_event",
+    "description": "Adds an event.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Title of the calendar event."
+        },
+        "start": {
+          "type": "string",
+          "description": "Start timestamp or datetime."
+        },
+        "end": {
+          "type": "string",
+          "description": "End timestamp or datetime."
+        }
+      },
+      "required": ["title", "start", "end"]
+    }
+  },
+  {
+    "name": "set_reminder",
+    "description": "Sets a reminder.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Reminder description or note."
+        },
+        "time": {
+          "type": "string",
+          "description": "Time when the reminder should trigger."
+        }
+      },
+      "required": ["text", "time"]
+    }
+  },
+  {
+    "name": "get_weather",
+    "description": "Gets weather information.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string",
+          "description": "Name of the city."
+        }
+      },
+      "required": ["city"]
+    }
+  },
+  {
+    "name": "calculator",
+    "description": "Does math.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "expression": {
+          "type": "string",
+          "description": "Mathematical expression to evaluate."
+        }
+      },
+      "required": ["expression"]
+    }
+  },
+  {
+    "name": "translate_text",
+    "description": "Converts text.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Source text to translate."
+        },
+        "target_language": {
+          "type": "string",
+          "description": "Target language code or name."
+        }
+      },
+      "required": ["text", "target_language"]
+    }
+  }
+]

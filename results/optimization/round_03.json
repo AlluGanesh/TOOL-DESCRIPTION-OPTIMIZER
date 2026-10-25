@@ -1,0 +1,160 @@
+{
+  "round_number": 3,
+  "best_accuracy_before": 0.8571,
+  "candidate_accuracy": 0.8,
+  "accuracy_delta": -0.0571,
+  "accepted": false,
+  "rejection_reason": "Accuracy did not strictly improve: candidate=80.00% <= best=85.71%",
+  "current_descriptions": {
+    "search_web": "Searches the web for information.",
+    "search_docs": "Looks up information in documents.",
+    "read_file": "Reads a file.",
+    "write_file": "Writes data to a file.",
+    "send_email": "Sends a message via email.",
+    "create_calendar_event": "Adds an event to a calendar.",
+    "set_reminder": "Sets a reminder for later.",
+    "get_weather": "Gets weather information for a city.",
+    "calculator": "Does basic math calculations.",
+    "translate_text": "Converts text between languages."
+  },
+  "candidate_descriptions": {
+    "search_web": "Search the web for information. Use when looking up general web content.",
+    "search_docs": "Look up information in documents. Use when searching for specific document content.",
+    "read_file": "Read a file. Use when retrieving data from a file.",
+    "write_file": "Write data to a file. Use when storing data for later retrieval.",
+    "send_email": "Send a message via email. Use when communicating via email.",
+    "create_calendar_event": "Add an event to a calendar. Do not use for file operations or web searches.",
+    "set_reminder": "Set a reminder for later. Do not use for file operations or web searches.",
+    "get_weather": "Get weather information for a city. Use when checking weather conditions.",
+    "calculator": "Do basic math calculations. Do not use for file operations or web searches.",
+    "translate_text": "Convert text between languages. Use when translating text."
+  },
+  "mistakes_input": [
+    {
+      "query_id": "Q006",
+      "query": "Where can I find our engineering team's guidelines for submitting pull requests and code reviews?",
+      "expected_tool": "search_docs",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Internal documentation search for engineering onboarding processes. Near-miss with search_web."
+    },
+    {
+      "query_id": "Q011",
+      "query": "Can you inspect /var/log/nginx/error.log and show me the last few lines?",
+      "expected_tool": "read_file",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Explicit system log path given. Near-miss with search_docs if model misinterprets log inspection as document searching."
+    },
+    {
+      "query_id": "Q016",
+      "query": "Store the generated summary from our brainstorm session into /home/user/docs/summary.md.",
+      "expected_tool": "write_file",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Local file writing with path and generated payload. Near-miss with send_email if mistaken for distribution."
+    },
+    {
+      "query_id": "Q047",
+      "query": "Write a short three-stanza poem celebrating the arrival of spring.",
+      "expected_tool": "none",
+      "predicted_tool": "create_calendar_event",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "create_calendar_event"
+      ],
+      "notes": "Creative generative writing; no search, file, or communication tools are appropriate."
+    },
+    {
+      "query_id": "Q048",
+      "query": "Why is zero classified mathematically as an even number rather than an odd number?",
+      "expected_tool": "none",
+      "predicted_tool": "calculator",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "calculator"
+      ],
+      "notes": "Theoretical explanation of mathematical definitions. Near-miss with calculator if the model mistakenly triggers computational tools for math theory."
+    }
+  ],
+  "model": "qwen2.5:3b",
+  "candidate_tool_definition_hash": "3e3a9d101f69af3f4c36d11652c9aaf2397408eb2f62e8aefc6911725f375df9",
+  "dataset_hash": "10328b74aba349b092ae97bf0896b1d12fffa135a45bfd211f82f1a5e30ca13c",
+  "timestamp": "2026-10-24T13:25:53.846508+00:00",
+  "description_diffs": [
+    {
+      "tool_name": "search_web",
+      "before_description": "Searches the web for information.",
+      "after_description": "Search the web for information. Use when looking up general web content.",
+      "changed": true
+    },
+    {
+      "tool_name": "search_docs",
+      "before_description": "Looks up information in documents.",
+      "after_description": "Look up information in documents. Use when searching for specific document content.",
+      "changed": true
+    },
+    {
+      "tool_name": "read_file",
+      "before_description": "Reads a file.",
+      "after_description": "Read a file. Use when retrieving data from a file.",
+      "changed": true
+    },
+    {
+      "tool_name": "write_file",
+      "before_description": "Writes data to a file.",
+      "after_description": "Write data to a file. Use when storing data for later retrieval.",
+      "changed": true
+    },
+    {
+      "tool_name": "send_email",
+      "before_description": "Sends a message via email.",
+      "after_description": "Send a message via email. Use when communicating via email.",
+      "changed": true
+    },
+    {
+      "tool_name": "create_calendar_event",
+      "before_description": "Adds an event to a calendar.",
+      "after_description": "Add an event to a calendar. Do not use for file operations or web searches.",
+      "changed": true
+    },
+    {
+      "tool_name": "set_reminder",
+      "before_description": "Sets a reminder for later.",
+      "after_description": "Set a reminder for later. Do not use for file operations or web searches.",
+      "changed": true
+    },
+    {
+      "tool_name": "get_weather",
+      "before_description": "Gets weather information for a city.",
+      "after_description": "Get weather information for a city. Use when checking weather conditions.",
+      "changed": true
+    },
+    {
+      "tool_name": "calculator",
+      "before_description": "Does basic math calculations.",
+      "after_description": "Do basic math calculations. Do not use for file operations or web searches.",
+      "changed": true
+    },
+    {
+      "tool_name": "translate_text",
+      "before_description": "Converts text between languages.",
+      "after_description": "Convert text between languages. Use when translating text.",
+      "changed": true
+    }
+  ]
+}

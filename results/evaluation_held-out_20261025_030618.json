@@ -1,0 +1,700 @@
+{
+  "metadata": {
+    "run_id": "eval_held-out_20261025_030618",
+    "model": "qwen2.5:3b",
+    "split": "held-out",
+    "runs_per_query": 1,
+    "timestamp": "2026-10-25T03:07:41.149810+00:00",
+    "total_queries": 15,
+    "tool_definition_hash": "1d887828d4872e66589f8ae99d7cceccfaf616e2a2df3a8a041f34b6be0a0f0f",
+    "dataset_hash": "37e0997d8f69724cd130eec77b9442d56d2170b42dd608126341ddff6b126f65"
+  },
+  "total_queries": 15,
+  "correct_count": 12,
+  "accuracy": 0.8,
+  "per_tool_metrics": {
+    "search_web": {
+      "tool": "search_web",
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "total_actual": 1,
+      "total_predicted": 2
+    },
+    "search_docs": {
+      "tool": "search_docs",
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1_score": 0.6667,
+      "total_actual": 2,
+      "total_predicted": 1
+    },
+    "read_file": {
+      "tool": "read_file",
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 1,
+      "total_predicted": 1
+    },
+    "write_file": {
+      "tool": "write_file",
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "total_actual": 1,
+      "total_predicted": 0
+    },
+    "send_email": {
+      "tool": "send_email",
+      "true_positives": 2,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 2,
+      "total_predicted": 2
+    },
+    "create_calendar_event": {
+      "tool": "create_calendar_event",
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 1,
+      "total_predicted": 1
+    },
+    "set_reminder": {
+      "tool": "set_reminder",
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 1,
+      "total_predicted": 1
+    },
+    "get_weather": {
+      "tool": "get_weather",
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 1,
+      "total_predicted": 1
+    },
+    "calculator": {
+      "tool": "calculator",
+      "true_positives": 2,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 2,
+      "total_predicted": 2
+    },
+    "translate_text": {
+      "tool": "translate_text",
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "total_actual": 1,
+      "total_predicted": 1
+    },
+    "none": {
+      "tool": "none",
+      "true_positives": 1,
+      "false_positives": 2,
+      "false_negatives": 1,
+      "precision": 0.3333,
+      "recall": 0.5,
+      "f1_score": 0.4,
+      "total_actual": 2,
+      "total_predicted": 3
+    }
+  },
+  "confusion_matrix": {
+    "search_web": {
+      "search_web": 1,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 0
+    },
+    "search_docs": {
+      "search_web": 0,
+      "search_docs": 1,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 1
+    },
+    "read_file": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 1,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 0
+    },
+    "write_file": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 1
+    },
+    "send_email": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 2,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 0
+    },
+    "create_calendar_event": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 1,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 0
+    },
+    "set_reminder": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 1,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 0
+    },
+    "get_weather": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 1,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 0
+    },
+    "calculator": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 2,
+      "translate_text": 0,
+      "none": 0
+    },
+    "translate_text": {
+      "search_web": 0,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 1,
+      "none": 0
+    },
+    "none": {
+      "search_web": 1,
+      "search_docs": 0,
+      "read_file": 0,
+      "write_file": 0,
+      "send_email": 0,
+      "create_calendar_event": 0,
+      "set_reminder": 0,
+      "get_weather": 0,
+      "calculator": 0,
+      "translate_text": 0,
+      "none": 1
+    }
+  },
+  "mistakes": [
+    {
+      "query_id": "Q009",
+      "query": "What SLA tier do we commit to enterprise clients for urgent production outages in our support agreements?",
+      "expected_tool": "search_docs",
+      "predicted_tool": "none",
+      "split": "held-out",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Internal contractual documentation search. Near-miss with search_web if model confuses enterprise SLA with generic industry definitions."
+    },
+    {
+      "query_id": "Q018",
+      "query": "Export this list of customer IDs to C:\\Exports\\churned_users.csv on the disk.",
+      "expected_tool": "write_file",
+      "predicted_tool": "none",
+      "split": "held-out",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "File writing operation targeting a specific CSV path."
+    },
+    {
+      "query_id": "Q049",
+      "query": "What are some general tips for maintaining good posture while working long hours at a desk?",
+      "expected_tool": "none",
+      "predicted_tool": "search_web",
+      "split": "held-out",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "search_web"
+      ],
+      "notes": "General health advice/best practice discussion requiring no external search or tools. Near-miss with search_web."
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "Q004",
+      "query": "What is the current status of the Artemis space mission schedule according to recent announcements?",
+      "expected_tool": "search_web",
+      "split": "held-out",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "search_web"
+      ],
+      "final_prediction": "search_web",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "search_web",
+          "tool_called": true,
+          "arguments": {
+            "query": "Artemis space mission schedule recent announcements"
+          },
+          "duration_ms": 7705.29,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q008",
+      "query": "Look through our internal wiki for the recommended procedure when handling customer data deletion requests.",
+      "expected_tool": "search_docs",
+      "split": "held-out",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "search_docs"
+      ],
+      "final_prediction": "search_docs",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "search_docs",
+          "tool_called": true,
+          "arguments": {
+            "query": "recommended procedure handling customer data deletion requests"
+          },
+          "duration_ms": 1670.23,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q009",
+      "query": "What SLA tier do we commit to enterprise clients for urgent production outages in our support agreements?",
+      "expected_tool": "search_docs",
+      "split": "held-out",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "none"
+      ],
+      "final_prediction": "none",
+      "correct": false,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "none",
+          "tool_called": false,
+          "arguments": null,
+          "duration_ms": 5836.0,
+          "cache_hit": false,
+          "raw_response": "I don't have direct access to your company's support agreement SLA details. Typically, these details are outlined in the specific contract or agreement between your company and the service provider. However, I can help you understand how to find this information or perform a search for general SLA tiers.\n\nWould you like me to search for general information about SLA tiers for enterprise clients or do you need help finding your specific agreement details?"
+        }
+      ]
+    },
+    {
+      "query_id": "Q014",
+      "query": "Check the contents of /etc/hosts to see if the local database alias is configured.",
+      "expected_tool": "read_file",
+      "split": "held-out",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "read_file"
+      ],
+      "final_prediction": "read_file",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "read_file",
+          "tool_called": true,
+          "arguments": {
+            "path": "/etc/hosts"
+          },
+          "duration_ms": 2109.32,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q018",
+      "query": "Export this list of customer IDs to C:\\Exports\\churned_users.csv on the disk.",
+      "expected_tool": "write_file",
+      "split": "held-out",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "final_prediction": "none",
+      "correct": false,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "none",
+          "tool_called": false,
+          "arguments": null,
+          "duration_ms": 8907.4,
+          "cache_hit": false,
+          "raw_response": "It seems like there might be a misunderstanding in your request. The list of customer IDs is not provided in our current context, and we don't have a direct function to export data to a file. However, I can guide you through the process if you can provide the list of customer IDs and the format of the data.\n\nOnce you provide the list, I can demonstrate how to export it to a CSV file using Python or another suitable method. If you prefer, I can also use a tool if it's available in our set of functions. Please provide the customer IDs and any additional details needed for the export process."
+        }
+      ]
+    },
+    {
+      "query_id": "Q022",
+      "query": "Forward a note to support@cloudvendor.io with subject 'Urgent: Billing Discrepancy' explaining our last invoice has duplicate line items.",
+      "expected_tool": "send_email",
+      "split": "held-out",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "send_email"
+      ],
+      "final_prediction": "send_email",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "send_email",
+          "tool_called": true,
+          "arguments": {
+            "body": "Our last invoice has duplicate line items. Please investigate and resolve this issue as soon as possible.",
+            "to": "support@cloudvendor.io",
+            "subject": "Urgent: Billing Discrepancy"
+          },
+          "duration_ms": 4737.96,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q023",
+      "query": "Notify alex@startup.ai that the server credentials were rotated and attach the instructions in the message.",
+      "expected_tool": "send_email",
+      "split": "held-out",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "send_email"
+      ],
+      "final_prediction": "send_email",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "send_email",
+          "tool_called": true,
+          "arguments": {
+            "to": "alex@startup.ai",
+            "subject": "Server Credentials Rotation",
+            "body": "The server credentials have been rotated. Please find the instructions attached for reference."
+          },
+          "duration_ms": 6669.23,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q028",
+      "query": "Reserve a meeting on Thursday from 4:00 PM to 5:00 PM with the marketing team called 'Campaign Debrief'.",
+      "expected_tool": "create_calendar_event",
+      "split": "held-out",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "create_calendar_event"
+      ],
+      "final_prediction": "create_calendar_event",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "create_calendar_event",
+          "tool_called": true,
+          "arguments": {
+            "title": "Campaign Debrief Meeting",
+            "start": "16:00",
+            "end": "17:00"
+          },
+          "duration_ms": 3793.31,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q032",
+      "query": "Make sure I get a notification at 6:00 PM to submit my weekly timesheet.",
+      "expected_tool": "set_reminder",
+      "split": "held-out",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "set_reminder"
+      ],
+      "final_prediction": "set_reminder",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "set_reminder",
+          "tool_called": true,
+          "arguments": {
+            "text": "Submit weekly timesheet",
+            "time": "18:00"
+          },
+          "duration_ms": 2755.47,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q036",
+      "query": "How warm is it currently in Miami Beach in Celsius?",
+      "expected_tool": "get_weather",
+      "split": "held-out",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "get_weather"
+      ],
+      "final_prediction": "get_weather",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "get_weather",
+          "tool_called": true,
+          "arguments": {
+            "city": "Miami Beach"
+          },
+          "duration_ms": 1767.1,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q040",
+      "query": "Divide 8,742 by 14 and give me the exact result.",
+      "expected_tool": "calculator",
+      "split": "held-out",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "calculator"
+      ],
+      "final_prediction": "calculator",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "calculator",
+          "tool_called": true,
+          "arguments": {
+            "expression": "8742 / 14"
+          },
+          "duration_ms": 2102.7,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q041",
+      "query": "What is the monthly mortgage payment on a $450,000 loan with a 30-year fixed rate of 7.2%?",
+      "expected_tool": "calculator",
+      "split": "held-out",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "calculator"
+      ],
+      "final_prediction": "calculator",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "calculator",
+          "tool_called": true,
+          "arguments": {
+            "expression": "450000*(0.072/12)*(1+(0.072/12))^(30*12)/((1+(0.072/12))^(30*12)-1)"
+          },
+          "duration_ms": 21558.09,
+          "cache_hit": false,
+          "raw_response": "Calculating an exact monthly mortgage payment requires using a mortgage payment formula or an online mortgage calculator, as the formula involves complex calculations including the principal amount, interest rate, and loan term. However, I can guide you through the process using the formula:\n\n\\[ M = P \\frac{r(1+r)^n}{(1+r)^n-1} \\]\n\nWhere:\n- \\( M \\) is the monthly payment.\n- \\( P \\) is the principal loan amount ($450,000).\n- \\( r \\) is the monthly interest rate (annual rate divided by 12).\n- \\( n \\) is the number of payments over the loan's lifetime (30 years times 12 months per year).\n\nGiven:\n- Principal \\( P = 450,000 \\)\n- Annual interest rate \\( = 7.2\\% \\)\n- Loan term \\( = 30 \\) years\n\nLet's calculate the monthly interest rate \\( r \\) and the total number of payments \\( n \\).\n\nI will first calculate \\( r \\) and \\( n \\), and then use the formula to find \\( M \\).\n"
+        }
+      ]
+    },
+    {
+      "query_id": "Q045",
+      "query": "Please express 'Where is the nearest subway station?' in Spanish.",
+      "expected_tool": "translate_text",
+      "split": "held-out",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "translate_text"
+      ],
+      "final_prediction": "translate_text",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "translate_text",
+          "tool_called": true,
+          "arguments": {
+            "text": "Where is the nearest subway station?",
+            "target_language": "es"
+          },
+          "duration_ms": 2451.09,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q049",
+      "query": "What are some general tips for maintaining good posture while working long hours at a desk?",
+      "expected_tool": "none",
+      "split": "held-out",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "search_web"
+      ],
+      "final_prediction": "search_web",
+      "correct": false,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "search_web",
+          "tool_called": true,
+          "arguments": {
+            "query": "tips for maintaining good posture while working long hours at a desk"
+          },
+          "duration_ms": 2536.69,
+          "cache_hit": false,
+          "raw_response": ""
+        }
+      ]
+    },
+    {
+      "query_id": "Q050",
+      "query": "Could you brainstorm five creative names for a sustainable bamboo home goods brand?",
+      "expected_tool": "none",
+      "split": "held-out",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "none"
+      ],
+      "final_prediction": "none",
+      "correct": true,
+      "run_details": [
+        {
+          "run_index": 0,
+          "predicted_tool": "none",
+          "tool_called": false,
+          "arguments": null,
+          "duration_ms": 5651.91,
+          "cache_hit": false,
+          "raw_response": "Creating unique and catchy names for a sustainable bamboo home goods brand is a fun task. Here are five creative suggestions:\n\n1. BambuBloom\n2. EarthBamboo\n3. GreenLeafCraft\n4. BambooHarvest\n5. EcoBamboo\n\nThese names incorporate elements like bamboo, sustainability, and nature-inspired words to reflect the brand's values."
+        }
+      ]
+    }
+  ]
+}

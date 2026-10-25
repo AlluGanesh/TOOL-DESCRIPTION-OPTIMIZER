@@ -1,0 +1,184 @@
+{
+  "round_number": 1,
+  "best_accuracy_before": 0.8,
+  "candidate_accuracy": 0.8571,
+  "accuracy_delta": 0.0571,
+  "accepted": true,
+  "rejection_reason": null,
+  "current_descriptions": {
+    "search_web": "Searches for information.",
+    "search_docs": "Looks up information in documents.",
+    "read_file": "Reads a file.",
+    "write_file": "Writes data to a file.",
+    "send_email": "Sends a message.",
+    "create_calendar_event": "Adds an event.",
+    "set_reminder": "Sets a reminder.",
+    "get_weather": "Gets weather information.",
+    "calculator": "Does math.",
+    "translate_text": "Converts text."
+  },
+  "candidate_descriptions": {
+    "search_web": "Searches the web for information.",
+    "search_docs": "Looks up information in documents.",
+    "read_file": "Reads a file.",
+    "write_file": "Writes data to a file.",
+    "send_email": "Sends a message via email.",
+    "create_calendar_event": "Adds an event to a calendar.",
+    "set_reminder": "Sets a reminder for later.",
+    "get_weather": "Gets weather information for a city.",
+    "calculator": "Does basic math calculations.",
+    "translate_text": "Converts text between languages."
+  },
+  "mistakes_input": [
+    {
+      "query_id": "Q006",
+      "query": "Where can I find our engineering team's guidelines for submitting pull requests and code reviews?",
+      "expected_tool": "search_docs",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Internal documentation search for engineering onboarding processes. Near-miss with search_web."
+    },
+    {
+      "query_id": "Q007",
+      "query": "What are the travel reimbursement limits for domestic client dinners specified in our expense guidelines?",
+      "expected_tool": "search_docs",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Company internal policy search without an explicit file path. Near-miss with read_file."
+    },
+    {
+      "query_id": "Q010",
+      "query": "Display the contents of C:\\Users\\Dev\\workspace\\config.yaml so I can check the port settings.",
+      "expected_tool": "read_file",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "easy",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Explicit local absolute file path provided to inspect configuration."
+    },
+    {
+      "query_id": "Q011",
+      "query": "Can you inspect /var/log/nginx/error.log and show me the last few lines?",
+      "expected_tool": "read_file",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Explicit system log path given. Near-miss with search_docs if model misinterprets log inspection as document searching."
+    },
+    {
+      "query_id": "Q013",
+      "query": "Open ./notes/meeting_2026_10_20.txt and let me know what was discussed.",
+      "expected_tool": "read_file",
+      "predicted_tool": "none",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "none"
+      ],
+      "notes": "Relative file path targeting local text document. Near-miss with search_docs."
+    },
+    {
+      "query_id": "Q047",
+      "query": "Write a short three-stanza poem celebrating the arrival of spring.",
+      "expected_tool": "none",
+      "predicted_tool": "create_calendar_event",
+      "split": "tuning",
+      "difficulty": "medium",
+      "predictions_by_run": [
+        "create_calendar_event"
+      ],
+      "notes": "Creative generative writing; no search, file, or communication tools are appropriate."
+    },
+    {
+      "query_id": "Q048",
+      "query": "Why is zero classified mathematically as an even number rather than an odd number?",
+      "expected_tool": "none",
+      "predicted_tool": "calculator",
+      "split": "tuning",
+      "difficulty": "hard",
+      "predictions_by_run": [
+        "calculator"
+      ],
+      "notes": "Theoretical explanation of mathematical definitions. Near-miss with calculator if the model mistakenly triggers computational tools for math theory."
+    }
+  ],
+  "model": "qwen2.5:3b",
+  "candidate_tool_definition_hash": "1d887828d4872e66589f8ae99d7cceccfaf616e2a2df3a8a041f34b6be0a0f0f",
+  "dataset_hash": "10328b74aba349b092ae97bf0896b1d12fffa135a45bfd211f82f1a5e30ca13c",
+  "timestamp": "2026-10-24T13:19:42.650940+00:00",
+  "description_diffs": [
+    {
+      "tool_name": "search_web",
+      "before_description": "Searches for information.",
+      "after_description": "Searches the web for information.",
+      "changed": true
+    },
+    {
+      "tool_name": "search_docs",
+      "before_description": "Looks up information in documents.",
+      "after_description": "Looks up information in documents.",
+      "changed": false
+    },
+    {
+      "tool_name": "read_file",
+      "before_description": "Reads a file.",
+      "after_description": "Reads a file.",
+      "changed": false
+    },
+    {
+      "tool_name": "write_file",
+      "before_description": "Writes data to a file.",
+      "after_description": "Writes data to a file.",
+      "changed": false
+    },
+    {
+      "tool_name": "send_email",
+      "before_description": "Sends a message.",
+      "after_description": "Sends a message via email.",
+      "changed": true
+    },
+    {
+      "tool_name": "create_calendar_event",
+      "before_description": "Adds an event.",
+      "after_description": "Adds an event to a calendar.",
+      "changed": true
+    },
+    {
+      "tool_name": "set_reminder",
+      "before_description": "Sets a reminder.",
+      "after_description": "Sets a reminder for later.",
+      "changed": true
+    },
+    {
+      "tool_name": "get_weather",
+      "before_description": "Gets weather information.",
+      "after_description": "Gets weather information for a city.",
+      "changed": true
+    },
+    {
+      "tool_name": "calculator",
+      "before_description": "Does math.",
+      "after_description": "Does basic math calculations.",
+      "changed": true
+    },
+    {
+      "tool_name": "translate_text",
+      "before_description": "Converts text.",
+      "after_description": "Converts text between languages.",
+      "changed": true
+    }
+  ]
+}

@@ -1,0 +1,919 @@
+{
+  "metadata": {
+    "experiment_name": "TOOL-DESCRIPTION-OPTIMIZER Phase 7 & 8 Controlled Evaluation",
+    "compiled_at": "2026-10-25T05:18:14.291673+00:00",
+    "model": "qwen2.5:3b",
+    "temperature": 0.0,
+    "runs_per_query": 1,
+    "total_tools": 10,
+    "total_classes": 11,
+    "total_queries": 50,
+    "tuning_queries": 35,
+    "held_out_queries": 15
+  },
+  "experimental_controls": {
+    "model_fixed": true,
+    "temperature_fixed": true,
+    "tool_schemas_fixed": true,
+    "parameter_names_fixed": true,
+    "parameter_types_fixed": true,
+    "required_fields_fixed": true,
+    "tool_names_fixed": true,
+    "number_of_tools_fixed": true,
+    "queries_dataset_fixed": true,
+    "only_descriptions_modified": true
+  },
+  "integrity_hashes": {
+    "canonical_tools_hash": "6a989b336d703f0eda7d36aa01d7d1458b7b72aac47dca220b4924b48358b495",
+    "optimized_tools_hash": "1d887828d4872e66589f8ae99d7cceccfaf616e2a2df3a8a041f34b6be0a0f0f",
+    "tuning_dataset_hash": "10328b74aba349b092ae97bf0896b1d12fffa135a45bfd211f82f1a5e30ca13c",
+    "held_out_dataset_hash": "37e0997d8f69724cd130eec77b9442d56d2170b42dd608126341ddff6b126f65"
+  },
+  "accuracy_summary": {
+    "tuning": {
+      "baseline": {
+        "correct": 28,
+        "total": 35,
+        "accuracy": 0.8,
+        "accuracy_pct": 80.0,
+        "errors": 7
+      },
+      "optimized": {
+        "correct": 30,
+        "total": 35,
+        "accuracy": 0.8571,
+        "accuracy_pct": 85.71,
+        "errors": 5
+      },
+      "absolute_improvement_pp": 5.71,
+      "relative_improvement_pct": 7.14
+    },
+    "held_out": {
+      "baseline": {
+        "correct": 11,
+        "total": 15,
+        "accuracy": 0.7333,
+        "accuracy_pct": 73.33,
+        "errors": 4
+      },
+      "optimized": {
+        "correct": 12,
+        "total": 15,
+        "accuracy": 0.8,
+        "accuracy_pct": 80.0,
+        "errors": 3
+      },
+      "absolute_improvement_pp": 6.67,
+      "relative_improvement_pct": 9.09,
+      "error_reduction_pct": 25.0
+    }
+  },
+  "query_transition_counts": {
+    "remained_correct": 11,
+    "became_correct": 1,
+    "became_incorrect": 0,
+    "remained_incorrect": 3,
+    "remained_correct_ids": [
+      "Q004",
+      "Q008",
+      "Q022",
+      "Q023",
+      "Q028",
+      "Q032",
+      "Q036",
+      "Q040",
+      "Q041",
+      "Q045",
+      "Q050"
+    ],
+    "became_correct_ids": [
+      "Q014"
+    ],
+    "became_incorrect_ids": [],
+    "remained_incorrect_ids": [
+      "Q009",
+      "Q018",
+      "Q049"
+    ]
+  },
+  "optimization_rounds_summary": {
+    "total_rounds": 3,
+    "accepted_rounds": 1,
+    "best_round": 1,
+    "stop_reason": "consecutive_non_improvements",
+    "round_accuracies": [
+      {
+        "round": 0,
+        "accuracy": 0.8,
+        "status": "baseline_anchor"
+      },
+      {
+        "round": 1,
+        "accuracy": 0.8571,
+        "status": "accepted_best"
+      },
+      {
+        "round": 2,
+        "accuracy": 0.8,
+        "status": "rejected"
+      },
+      {
+        "round": 3,
+        "accuracy": 0.8,
+        "status": "rejected_stopped"
+      }
+    ]
+  },
+  "per_tool_metrics": {
+    "search_web": {
+      "tool": "search_web",
+      "actual_count": 1,
+      "baseline": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1_score": 0.6667,
+        "true_positives": 1,
+        "false_positives": 1,
+        "false_negatives": 0
+      },
+      "optimized": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1_score": 0.6667,
+        "true_positives": 1,
+        "false_positives": 1,
+        "false_negatives": 0
+      },
+      "f1_delta": 0.0
+    },
+    "search_docs": {
+      "tool": "search_docs",
+      "actual_count": 2,
+      "baseline": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1_score": 0.6667,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 1
+      },
+      "optimized": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1_score": 0.6667,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 1
+      },
+      "f1_delta": 0.0
+    },
+    "read_file": {
+      "tool": "read_file",
+      "actual_count": 1,
+      "baseline": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1
+      },
+      "optimized": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "f1_delta": 1.0
+    },
+    "write_file": {
+      "tool": "write_file",
+      "actual_count": 1,
+      "baseline": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1
+      },
+      "optimized": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1
+      },
+      "f1_delta": 0.0
+    },
+    "send_email": {
+      "tool": "send_email",
+      "actual_count": 2,
+      "baseline": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "optimized": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "f1_delta": 0.0
+    },
+    "create_calendar_event": {
+      "tool": "create_calendar_event",
+      "actual_count": 1,
+      "baseline": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "optimized": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "f1_delta": 0.0
+    },
+    "set_reminder": {
+      "tool": "set_reminder",
+      "actual_count": 1,
+      "baseline": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "optimized": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "f1_delta": 0.0
+    },
+    "get_weather": {
+      "tool": "get_weather",
+      "actual_count": 1,
+      "baseline": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "optimized": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "f1_delta": 0.0
+    },
+    "calculator": {
+      "tool": "calculator",
+      "actual_count": 2,
+      "baseline": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "optimized": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "f1_delta": 0.0
+    },
+    "translate_text": {
+      "tool": "translate_text",
+      "actual_count": 1,
+      "baseline": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "optimized": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "f1_delta": 0.0
+    },
+    "none": {
+      "tool": "none",
+      "actual_count": 2,
+      "baseline": {
+        "precision": 0.25,
+        "recall": 0.5,
+        "f1_score": 0.3333,
+        "true_positives": 1,
+        "false_positives": 3,
+        "false_negatives": 1
+      },
+      "optimized": {
+        "precision": 0.3333,
+        "recall": 0.5,
+        "f1_score": 0.4,
+        "true_positives": 1,
+        "false_positives": 2,
+        "false_negatives": 1
+      },
+      "f1_delta": 0.0667
+    }
+  },
+  "confusion_matrices": {
+    "baseline": {
+      "search_web": {
+        "search_web": 1,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 0
+      },
+      "search_docs": {
+        "search_web": 0,
+        "search_docs": 1,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 1
+      },
+      "read_file": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 1
+      },
+      "write_file": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 1
+      },
+      "send_email": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 2,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 0
+      },
+      "create_calendar_event": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 1,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 0
+      },
+      "set_reminder": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 1,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 0
+      },
+      "get_weather": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 1,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 0
+      },
+      "calculator": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 2,
+        "translate_text": 0,
+        "none": 0
+      },
+      "translate_text": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 1,
+        "none": 0
+      },
+      "none": {
+        "search_web": 1,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 1
+      }
+    },
+    "optimized": {
+      "search_web": {
+        "search_web": 1,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 0
+      },
+      "search_docs": {
+        "search_web": 0,
+        "search_docs": 1,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 1
+      },
+      "read_file": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 1,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 0
+      },
+      "write_file": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 1
+      },
+      "send_email": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 2,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 0
+      },
+      "create_calendar_event": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 1,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 0
+      },
+      "set_reminder": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 1,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 0
+      },
+      "get_weather": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 1,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 0
+      },
+      "calculator": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 2,
+        "translate_text": 0,
+        "none": 0
+      },
+      "translate_text": {
+        "search_web": 0,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 1,
+        "none": 0
+      },
+      "none": {
+        "search_web": 1,
+        "search_docs": 0,
+        "read_file": 0,
+        "write_file": 0,
+        "send_email": 0,
+        "create_calendar_event": 0,
+        "set_reminder": 0,
+        "get_weather": 0,
+        "calculator": 0,
+        "translate_text": 0,
+        "none": 1
+      }
+    },
+    "label_order": [
+      "search_web",
+      "search_docs",
+      "read_file",
+      "write_file",
+      "send_email",
+      "create_calendar_event",
+      "set_reminder",
+      "get_weather",
+      "calculator",
+      "translate_text",
+      "none"
+    ]
+  },
+  "tool_description_diffs": [
+    {
+      "tool_name": "search_web",
+      "original_description": "Searches for information.",
+      "optimized_description": "Searches the web for information.",
+      "changed": true,
+      "nature_of_change": "Object/Domain clarification: Explicitly specifies the web search domain over general lookup."
+    },
+    {
+      "tool_name": "search_docs",
+      "original_description": "Looks up information in documents.",
+      "optimized_description": "Looks up information in documents.",
+      "changed": false,
+      "nature_of_change": "No change: Baseline description was already sufficiently specific for internal documentation."
+    },
+    {
+      "tool_name": "read_file",
+      "original_description": "Reads a file.",
+      "optimized_description": "Reads a file.",
+      "changed": false,
+      "nature_of_change": "No change: Baseline description was already direct for filesystem inspection."
+    },
+    {
+      "tool_name": "write_file",
+      "original_description": "Writes data to a file.",
+      "optimized_description": "Writes data to a file.",
+      "changed": false,
+      "nature_of_change": "No change: Baseline description was already direct for filesystem persistence."
+    },
+    {
+      "tool_name": "send_email",
+      "original_description": "Sends a message.",
+      "optimized_description": "Sends a message via email.",
+      "changed": true,
+      "nature_of_change": "Channel/Medium clarification: Specifies outbound email transmission over generic messaging."
+    },
+    {
+      "tool_name": "create_calendar_event",
+      "original_description": "Adds an event.",
+      "optimized_description": "Adds an event to a calendar.",
+      "changed": true,
+      "nature_of_change": "Domain clarification: Distinguishes calendar event booking from generic system events."
+    },
+    {
+      "tool_name": "set_reminder",
+      "original_description": "Sets a reminder.",
+      "optimized_description": "Sets a reminder for later.",
+      "changed": true,
+      "nature_of_change": "Temporal clarification: States deferred alert semantics ('for later') over immediate triggers."
+    },
+    {
+      "tool_name": "get_weather",
+      "original_description": "Gets weather information.",
+      "optimized_description": "Gets weather information for a city.",
+      "changed": true,
+      "nature_of_change": "Entity clarification: Designates target geographic entity ('for a city')."
+    },
+    {
+      "tool_name": "calculator",
+      "original_description": "Does math.",
+      "optimized_description": "Does basic math calculations.",
+      "changed": true,
+      "nature_of_change": "Action/Scope clarification: Specifies computational calculation over theoretical mathematical inquiry."
+    },
+    {
+      "tool_name": "translate_text",
+      "original_description": "Converts text.",
+      "optimized_description": "Converts text between languages.",
+      "changed": true,
+      "nature_of_change": "Task clarification: Distinguishes multilingual language translation from text transformations."
+    }
+  ],
+  "held_out_query_details": [
+    {
+      "query_id": "Q004",
+      "query": "What is the current status of the Artemis space mission schedule according to recent announcements?",
+      "expected_tool": "search_web",
+      "difficulty": "hard",
+      "notes": "Public web search for ongoing space mission updates; near-miss with search_docs if mistaken for internal team project schedule.",
+      "baseline_prediction": "search_web",
+      "baseline_correct": true,
+      "optimized_prediction": "search_web",
+      "optimized_correct": true,
+      "transition": "remained_correct"
+    },
+    {
+      "query_id": "Q008",
+      "query": "Look through our internal wiki for the recommended procedure when handling customer data deletion requests.",
+      "expected_tool": "search_docs",
+      "difficulty": "medium",
+      "notes": "Corporate policy and compliance documentation search across internal wiki.",
+      "baseline_prediction": "search_docs",
+      "baseline_correct": true,
+      "optimized_prediction": "search_docs",
+      "optimized_correct": true,
+      "transition": "remained_correct"
+    },
+    {
+      "query_id": "Q009",
+      "query": "What SLA tier do we commit to enterprise clients for urgent production outages in our support agreements?",
+      "expected_tool": "search_docs",
+      "difficulty": "hard",
+      "notes": "Internal contractual documentation search. Near-miss with search_web if model confuses enterprise SLA with generic industry definitions.",
+      "baseline_prediction": "none",
+      "baseline_correct": false,
+      "optimized_prediction": "none",
+      "optimized_correct": false,
+      "transition": "remained_incorrect"
+    },
+    {
+      "query_id": "Q014",
+      "query": "Check the contents of /etc/hosts to see if the local database alias is configured.",
+      "expected_tool": "read_file",
+      "difficulty": "hard",
+      "notes": "Direct path to system file. Near-miss with search_docs or search_web.",
+      "baseline_prediction": "none",
+      "baseline_correct": false,
+      "optimized_prediction": "read_file",
+      "optimized_correct": true,
+      "transition": "became_correct"
+    },
+    {
+      "query_id": "Q018",
+      "query": "Export this list of customer IDs to C:\\Exports\\churned_users.csv on the disk.",
+      "expected_tool": "write_file",
+      "difficulty": "medium",
+      "notes": "File writing operation targeting a specific CSV path.",
+      "baseline_prediction": "none",
+      "baseline_correct": false,
+      "optimized_prediction": "none",
+      "optimized_correct": false,
+      "transition": "remained_incorrect"
+    },
+    {
+      "query_id": "Q022",
+      "query": "Forward a note to support@cloudvendor.io with subject 'Urgent: Billing Discrepancy' explaining our last invoice has duplicate line items.",
+      "expected_tool": "send_email",
+      "difficulty": "medium",
+      "notes": "Formal customer support email dispatch.",
+      "baseline_prediction": "send_email",
+      "baseline_correct": true,
+      "optimized_prediction": "send_email",
+      "optimized_correct": true,
+      "transition": "remained_correct"
+    },
+    {
+      "query_id": "Q023",
+      "query": "Notify alex@startup.ai that the server credentials were rotated and attach the instructions in the message.",
+      "expected_tool": "send_email",
+      "difficulty": "hard",
+      "notes": "Direct messaging notification to recipient. Near-miss with write_file if focus shifts to credential instructions.",
+      "baseline_prediction": "send_email",
+      "baseline_correct": true,
+      "optimized_prediction": "send_email",
+      "optimized_correct": true,
+      "transition": "remained_correct"
+    },
+    {
+      "query_id": "Q028",
+      "query": "Reserve a meeting on Thursday from 4:00 PM to 5:00 PM with the marketing team called 'Campaign Debrief'.",
+      "expected_tool": "create_calendar_event",
+      "difficulty": "medium",
+      "notes": "Standard group meeting schedule entry.",
+      "baseline_prediction": "create_calendar_event",
+      "baseline_correct": true,
+      "optimized_prediction": "create_calendar_event",
+      "optimized_correct": true,
+      "transition": "remained_correct"
+    },
+    {
+      "query_id": "Q032",
+      "query": "Make sure I get a notification at 6:00 PM to submit my weekly timesheet.",
+      "expected_tool": "set_reminder",
+      "difficulty": "hard",
+      "notes": "Personal notification alert. Near-miss with create_calendar_event.",
+      "baseline_prediction": "set_reminder",
+      "baseline_correct": true,
+      "optimized_prediction": "set_reminder",
+      "optimized_correct": true,
+      "transition": "remained_correct"
+    },
+    {
+      "query_id": "Q036",
+      "query": "How warm is it currently in Miami Beach in Celsius?",
+      "expected_tool": "get_weather",
+      "difficulty": "medium",
+      "notes": "Specific temperature inquiry for a geographic location.",
+      "baseline_prediction": "get_weather",
+      "baseline_correct": true,
+      "optimized_prediction": "get_weather",
+      "optimized_correct": true,
+      "transition": "remained_correct"
+    },
+    {
+      "query_id": "Q040",
+      "query": "Divide 8,742 by 14 and give me the exact result.",
+      "expected_tool": "calculator",
+      "difficulty": "easy",
+      "notes": "Direct numeric division.",
+      "baseline_prediction": "calculator",
+      "baseline_correct": true,
+      "optimized_prediction": "calculator",
+      "optimized_correct": true,
+      "transition": "remained_correct"
+    },
+    {
+      "query_id": "Q041",
+      "query": "What is the monthly mortgage payment on a $450,000 loan with a 30-year fixed rate of 7.2%?",
+      "expected_tool": "calculator",
+      "difficulty": "hard",
+      "notes": "Formulaic computational calculation. Near-miss with search_web.",
+      "baseline_prediction": "calculator",
+      "baseline_correct": true,
+      "optimized_prediction": "calculator",
+      "optimized_correct": true,
+      "transition": "remained_correct"
+    },
+    {
+      "query_id": "Q045",
+      "query": "Please express 'Where is the nearest subway station?' in Spanish.",
+      "expected_tool": "translate_text",
+      "difficulty": "medium",
+      "notes": "Conversational travel question translation.",
+      "baseline_prediction": "translate_text",
+      "baseline_correct": true,
+      "optimized_prediction": "translate_text",
+      "optimized_correct": true,
+      "transition": "remained_correct"
+    },
+    {
+      "query_id": "Q049",
+      "query": "What are some general tips for maintaining good posture while working long hours at a desk?",
+      "expected_tool": "none",
+      "difficulty": "medium",
+      "notes": "General health advice/best practice discussion requiring no external search or tools. Near-miss with search_web.",
+      "baseline_prediction": "search_web",
+      "baseline_correct": false,
+      "optimized_prediction": "search_web",
+      "optimized_correct": false,
+      "transition": "remained_incorrect"
+    },
+    {
+      "query_id": "Q050",
+      "query": "Could you brainstorm five creative names for a sustainable bamboo home goods brand?",
+      "expected_tool": "none",
+      "difficulty": "hard",
+      "notes": "Creative branding ideation; no external retrieval or utility tools required.",
+      "baseline_prediction": "none",
+      "baseline_correct": true,
+      "optimized_prediction": "none",
+      "optimized_correct": true,
+      "transition": "remained_correct"
+    }
+  ]
+}
